@@ -21,6 +21,10 @@ $.fn.extend({
 		$(this).append(initPopup());
 		var data_left = '', data_right = '';		
 
+		/*
+		** Check if settings are not undefined or length more than 1
+		** Else run default
+		*/
 		if(settings != undefined || settings.length != 0) {
 			data_left += '<img class=tp-popup-avatar src='+settings.avatar+' />'
 			data_right += '<h1 class=tp-popup-username>'+settings.username+'</h1>';
@@ -30,8 +34,17 @@ $.fn.extend({
 			$('.right-row:eq('+index+')').append(data_right);
 			$('.tp-popup:eq('+index+')').append('<div class=tp-popup-close><span class="tp-icon fa-close"></span></div>');	
 		}
-		else {
-			console.log('Something wrong!');
-		}
+
+		/*
+		** Function => close function
+		** With delay 650ms
+		*/
+		$('.tp-popup-close').click(function() {
+			$(this).parent().fadeOut(650);
+			setTimeout(function() {
+				$(this).parent().remove();
+				index = index - 1;
+			}, 1500);			
+		});
 	}
 });
