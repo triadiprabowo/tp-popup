@@ -1,0 +1,11 @@
+{
+  "name": "tp-popup",
+  "version": "1.0.0",
+  "description": "Popup modal jQuery plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Triadi Prabowo",
+  "license": "ISC"
+}

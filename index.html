@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>tpPopup jQuery Plugin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="assets/js/tpPopup.js"></script>
+	</head>
+
+	<body>		
+		<script>
+			$('body').tpPopup({
+				avatar: 'assets/img/user.jpg',
+				username: 'Triadi Prabowo',
+				message: 'posted new announcement'
+			});
+
+			$('body').tpPopup({
+				avatar: 'assets/img/user2.jpg',
+				username: 'Vincentius',
+				message: 'posted new announcement'
+			});
+
+			/*$.ajax({
+				method: "GET",				
+				url: "http://localhost/tpPopup/data.json",
+				contentType: "application/json",
+				success: function(data) {
+					for(var i=0; i < data.length; i++) {
+						$('body').tpPopup({
+							avatar: data[i].avatar,
+							username: data[i].username,
+							message: data[i].message
+						});
+					}
+				}
+			});*/
+		</script>
+	</body>
+</html>
