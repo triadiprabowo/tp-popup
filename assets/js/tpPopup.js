@@ -46,5 +46,13 @@ $.fn.extend({
 				index = index - 1;
 			}, 1500);			
 		});
+
+		/*
+		** Function => openOnClick
+		** Param: settings.openOnClick
+		*/
+		$('.tp-popup:eq('+index+')').click(function() {
+			window.location.href = settings.openOnClick;
+		});
 	}
 });
