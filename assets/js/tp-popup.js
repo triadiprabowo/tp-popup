@@ -25,7 +25,7 @@ $.fn.extend({
 		** Check if settings are not undefined or length more than 1
 		** Else run default
 		*/
-		if(settings != undefined || settings.length != 0) {
+		if(settings != undefined) {
 			data_left += '<img class=tp-popup-avatar src='+settings.avatar+' />'
 			data_right += '<h1 class=tp-popup-username>'+settings.username+'</h1>';
 			data_right += '<p class=tp-popup-msg>'+settings.message+'</p>';
@@ -42,6 +42,12 @@ $.fn.extend({
 			** Param: settings.openOnClick
 			*/
 			$('.tp-popup:eq('+index+') a').attr('href', settings.openOnClick);
+		}
+
+		// If settings are undefined or null then revoke popup
+		else {
+			$('.tp-popup').remove();
+			index = index - 1;
 		}
 
 		/*
