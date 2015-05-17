@@ -8,17 +8,22 @@
 
 function initPopup() {
 	var content = '';
-
 	return content += '<div class=tp-popup><a href=""><div class=left-row></div><div class=right-row></div></a></div>';
 }
 
 var index = -1;
 
 $.fn.extend({
-	tpPopup: function(settings) {
+	tpPopup: function(settings) {		
 		index += 1;
 		//Init popup
-		$(this).append(initPopup());
+		if(index != 0) {
+			$('.tp-popup-wrapper').append(initPopup());	
+		}
+		else {
+			$(this).append('<div class=tp-popup-wrapper>'+initPopup()+'</div>');
+		}
+		
 		var data_left = '', data_right = '';		
 
 		/*
