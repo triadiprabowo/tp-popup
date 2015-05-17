@@ -9,7 +9,7 @@
 function initPopup() {
 	var content = '';
 
-	return content += '<div class=tp-popup><div class=left-row></div><div class=right-row></div></div>';
+	return content += '<div class=tp-popup><a href="" id="tp-urlopen"><div class=left-row></div><div class=right-row></div></a></div>';
 }
 
 var index = -1;
@@ -30,9 +30,18 @@ $.fn.extend({
 			data_right += '<h1 class=tp-popup-username>'+settings.username+'</h1>';
 			data_right += '<p class=tp-popup-msg>'+settings.message+'</p>';
 
+			/*
+			** Init append data settings
+			*/
 			$('.left-row:eq('+index+')').append(data_left);
 			$('.right-row:eq('+index+')').append(data_right);
 			$('.tp-popup:eq('+index+')').append('<div class=tp-popup-close><span class="tp-icon fa-close"></span></div>');	
+
+			/*
+			** Function => openOnClick
+			** Param: settings.openOnClick
+			*/
+			$('.tp-popup:eq('+index+') a').attr('href', settings.openOnClick);
 		}
 
 		/*
@@ -45,14 +54,6 @@ $.fn.extend({
 				$(this).parent().remove();
 				index = index - 1;
 			}, 1500);			
-		});
-
-		/*
-		** Function => openOnClick
-		** Param: settings.openOnClick
-		*/
-		$('.tp-popup:eq('+index+')').click(function() {
-			window.location.href = settings.openOnClick;
 		});
 	}
 });
