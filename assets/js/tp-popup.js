@@ -9,7 +9,7 @@
 function initPopup() {
 	var content = '';
 
-	return content += '<div class=tp-popup><a href="" id="tp-urlopen"><div class=left-row></div><div class=right-row></div></a></div>';
+	return content += '<div class=tp-popup><a href=""><div class=left-row></div><div class=right-row></div></a></div>';
 }
 
 var index = -1;
